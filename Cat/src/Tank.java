@@ -1,10 +1,15 @@
 import static java.lang.Math.abs;
 
 public class Tank {
-    int x = 0;
-    int y = 0;
-    int dir;
-    int fuel = 100;
+    static int tankCount; //Статичное поле
+    static final String MODEL = "T34";
+
+    private  int x = 0;
+    private  int y = 0;
+    private  int dir = 0;
+    private int fuel = 100;
+    private int n;
+
     
     public Tank() {
         this(0, 0, 100);
@@ -14,14 +19,17 @@ public class Tank {
         this.x = x;
         this.y = y;
         this.fuel = fuel;
+        n = ++tankCount;
     }
 
     public Tank(int x, int y) {
-        this();
+        this(x,y, 100);
     }
 
     //0 - вправо, 1  - вниз, 2  - влево, 3 - вверх
     public void goForward(int x) {
+        // if (i < 0 && -i > -fuel)
+        // i = -fuel;
         if (fuel<=abs(x)) {
             x = fuel;
             // x>0 x=200, fuel = 100, res = 100 -> x-=fuel
@@ -39,7 +47,7 @@ public class Tank {
     }
 
     public void printPosition() {
-        System.out.printf("The Tank is at %d, %d now.\n", x, y);
+        System.out.printf("The Tank %s-%d is at %d, %d now.\n", MODEL, n, x, y);
         System.out.println();
     }
 

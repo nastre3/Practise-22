@@ -1,5 +1,8 @@
+import static java.lang.Math.*;
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println(sin(PI/4)); // можно использовать функцию без указания класса
 /*
 Make (add code to class Tank),
 with fuel and different constructors
