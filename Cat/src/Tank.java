@@ -22,14 +22,17 @@ public class Tank {
 
     //0 - вправо, 1  - вниз, 2  - влево, 3 - вверх
     public void goForward(int x) {
-        while (fuel!=0) {
+        if (fuel<=abs(x)) {
+            x = fuel;
+            // x>0 x=200, fuel = 100, res = 100 -> x-=fuel
+            // x<0 x=-200, fuel = 100, res = -100 -> x+=fuel
+        }
+        fuel-=abs(x);
             if (dir==0) this.x += x;
             else if (dir == 1) y+=x;
             else if (dir == 2) this.x -= x;
             else y -=x;
-            fuel-=abs(x);
         }
-    }
 
     public void goBackward(int x) {
             goForward(-x);
