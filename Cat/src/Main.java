@@ -2,17 +2,16 @@ import static java.lang.Math.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(sin(PI/4)); // можно использовать функцию без указания класса
+        System.out.println(sin(PI / 4)); // можно использовать функцию без указания класса
 /*
 Make (add code to class Tank),
 with fuel and different constructors
 */
 
-        // At (0;0) fuel=100
         Tank justTank = new Tank();
-        // At (10;20) fuel=100
+        // В (10;20) с fuel = 100
         Tank anywareTank = new Tank(10, 10);
-        // At (20;30) fuel=200
+        // В (20;30) с fuel = 200
         Tank customTank = new Tank(20, 30, 200);
         justTank.goForward(200);
         justTank.printPosition();
@@ -20,6 +19,11 @@ with fuel and different constructors
         anywareTank.printPosition();
         customTank.goForward(201);
         customTank.printPosition();
+        justTank.refill("?");
+        anywareTank.refill("30 литров солярки");
+        customTank.refill("- (20) литров");
+
+
 
 /*
 This fragment of code has to output
