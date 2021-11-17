@@ -64,15 +64,15 @@ public class Tank {
 
     int refill(String r_fuel) {
         if (r_fuel.equals("ask") == true || r_fuel.equals("?") == true || r_fuel.equals("") == true) {
-            System.out.println("В баке танка " + MODEL + "-" + getTankCount() + " " + getFuel()  + " литров");
+            System.out.println("В баке танка " + MODEL + "-" + n + " " + getFuel()  + " литров");
             return fuel;
         } else {
             r_fuel = r_fuel.replaceAll("[^-0-9]", "");
             if (Integer.parseInt(r_fuel) > 0) {
                 setFuel(fuel += Integer.parseInt(r_fuel));
-                System.out.println("Заправка танка " + MODEL + "-" + getTankCount()  + " на " + r_fuel + " литров произведена. В баке " + getFuel()  + " литров");
+                System.out.println("Заправка танка " + MODEL + "-" + n  + " на " + r_fuel + " литров произведена. В баке " + getFuel()  + " литров");
                 return fuel;
-            } else System.out.println("На заправке сливать топливо из танка " + MODEL + "-" + getTankCount()  + " запрещено");
+            } else System.out.println("На заправке сливать топливо из танка " + MODEL + "-" + n  + " запрещено");
             return fuel;
         }
     }
@@ -82,10 +82,7 @@ public class Tank {
     }
 
     public int getFuel() {
-        return fuel;
+        return this.fuel;
     }
 
-    public static int getTankCount() {
-        return tankCount;
-    }
 }
