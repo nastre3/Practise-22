@@ -1,4 +1,9 @@
-public class Cat {
+public class Cat extends Animal {
+    public Cat() {
+        //хищник, питается мясом и молоком
+        super(false, "milk and meat");
+    }
+
     //Поля класса
     double weight;
     String name;
@@ -6,6 +11,7 @@ public class Cat {
     String color;
     private static int catCount; //Статичное поле
 
+    /*
     // конструктор по умолчанию (без параметров)
     public Cat() {
         this(6000, "Bersi", 3, "White");
@@ -19,7 +25,9 @@ public class Cat {
         catCount++; //Увеличиваем счётчик кошек
     }
 
-    public void meow() {
+     */
+
+    public void sound() {
         System.out.println("Meow");
     }
 
@@ -64,6 +72,6 @@ public class Cat {
 
     public void setColor(String color) {
         this.color = color;
-        meow(); meow(); meow();
+        sound();
     }
 }

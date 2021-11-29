@@ -6,7 +6,7 @@ public class Main {
 /*
 Make (add code to class Tank),
 with fuel and different constructors
-*/
+
 
         Tank justTank = new Tank();
         // В (10;20) с fuel = 100
@@ -22,9 +22,7 @@ with fuel and different constructors
         justTank.refill("?");
         anywareTank.refill("30 литров солярки");
         customTank.refill("- (20) литров");
-
-
-
+*/
 /*
 This fragment of code has to output
 
@@ -33,5 +31,11 @@ The Tank is at 120, -10 now.
 The Tank is at 170, 30 now.
 
 */
+        Cat cat  = new Cat();
+        cat.sound();
+        System.out.println(cat.getEats());
+
+        ColorPoint c = new ColorPoint(1, 2, 12);
+        c.print();
     }
 }
